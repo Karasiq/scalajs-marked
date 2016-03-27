@@ -146,25 +146,19 @@ object TestApp extends JSApp {
   @JSExport
   override def main(): Unit = {
     jQuery(() ⇒ {
-      val options = new MarkedOptions {
-        import scalatags.Text.all.{body => _, source => _, _}
-
-        override val highlight: js.Function = { (source: String, lang: UndefOr[String], _: js.Function) ⇒
+      val options = MarkedOptions(
+        highlight = { (source: String, lang: UndefOr[String], _: js.Function) ⇒
           lang.fold(HighlightJS.highlightAuto(source))(HighlightJS.highlight(_, source)).value
-        }
-
-        override val renderer = MarkedRenderer(table = { (header: String, body: String) ⇒
+        },
+        renderer = MarkedRenderer(table = { (header: String, body: String) ⇒
+          import scalatags.Text.all.{body => _, header => _, _}
           table(`class` := "table table-striped", thead(raw(header)), tbody(raw(body))).render
-        })
-
-
-        override val breaks: Boolean = true
-
-        override val smartypants: Boolean = true
-      }
+        }),
+        breaks = true,
+        smartypants = true
+      )
 
       import scalatags.JsDom.all.{source => _, _}
-
       val textArea = textarea(`class` := "form-control", rows := 3).render
       TabOverride.tabSize(2)
       TabOverride.set(textArea)

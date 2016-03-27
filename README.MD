@@ -4,7 +4,7 @@
 # How to use
 Add dependency to your `build.sbt`:
 ```scala
-libraryDependencies += "com.github.karasiq" %%% "scalajs-marked" % "1.0.0"
+libraryDependencies += "com.github.karasiq" %%% "scalajs-marked" % "1.0.1"
 ```
 
 # Examples
