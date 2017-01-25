@@ -1,10 +1,10 @@
-# scalajs-marked [![Build Status](https://travis-ci.org/Karasiq/scalajs-marked.svg?branch=master)](https://travis-ci.org/Karasiq/scalajs-marked) [![Scala.js](http://scala-js.org/assets/badges/scalajs-0.6.8.svg)](http://scala-js.org) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.karasiq/scalajs-marked_sjs0.6_2.11/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.karasiq/scalajs-marked_sjs0.6_2.11)
+# scalajs-marked [![Build Status](https://travis-ci.org/Karasiq/scalajs-marked.svg?branch=master)](https://travis-ci.org/Karasiq/scalajs-marked) [![Scala.js](http://scala-js.org/assets/badges/scalajs-0.6.14.svg)](http://scala-js.org) [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.karasiq/scalajs-marked_sjs0.6_2.12/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.karasiq/scalajs-marked_sjs0.6_2.12)
 [Scala.js](http://scala-js.org/) bindings for [Marked](https://github.com/chjj/marked), [Highlight.js](https://highlightjs.org) and [Tab Override](https://github.com/wjbryant/taboverride)
 
 # How to use
 Add dependency to your `build.sbt`:
 ```scala
-libraryDependencies += "com.github.karasiq" %%% "scalajs-marked" % "1.0.1"
+libraryDependencies += "com.github.karasiq" %%% "scalajs-marked" % "1.0.2"
 ```
 
 # Examples

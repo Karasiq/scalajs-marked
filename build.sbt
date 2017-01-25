@@ -5,15 +5,16 @@ val scalaJsLibraryName: String = "marked"
 
 lazy val commonSettings = Seq(
   organization := "com.github.karasiq",
-  version := "1.0.1",
+  version := "1.0.2",
   isSnapshot := version.value.endsWith("SNAPSHOT"),
-  scalaVersion := "2.11.8"
+  scalaVersion := "2.12.1"
 )
 
 lazy val librarySettings = Seq(
   name := s"scalajs-$scalaJsLibraryName",
+  crossScalaVersions := Seq("2.11.8", "2.12.1"),
   libraryDependencies ++= Seq(
-    "org.scala-js" %%% "scalajs-dom" % "0.9.0"
+    "org.scala-js" %%% "scalajs-dom" % "0.9.1"
   ),
   jsDependencies += RuntimeDOM,
   publishMavenStyle := true,
@@ -43,6 +44,7 @@ lazy val librarySettings = Seq(
 
 lazy val testBackendSettings = Seq(
   name := s"scalajs-$scalaJsLibraryName-test",
+  scalaVersion := "2.11.8",
   resolvers += Resolver.sonatypeRepo("snapshots"),
   libraryDependencies ++= {
     val sprayV = "1.3.3"
@@ -93,8 +95,8 @@ lazy val testFrontendSettings = Seq(
   persistLauncher in Compile := true,
   name := s"scalajs-$scalaJsLibraryName-test-frontend",
   libraryDependencies ++= Seq(
-    "be.doeraene" %%% "scalajs-jquery" % "0.9.0",
-    "com.lihaoyi" %%% "scalatags" % "0.5.4"
+    "be.doeraene" %%% "scalajs-jquery" % "0.9.1",
+    "com.lihaoyi" %%% "scalatags" % "0.6.2"
   )
 )
 
